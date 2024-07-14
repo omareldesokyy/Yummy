@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region CSS Links -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="./css/output.css" rel="stylesheet">
+      <!-- #endregion CSS Links -->
+
+    <!-- #region Proj. Info. -->
+    <link rel="icon" href="imgs/logo.png">
+    <title>Yummy</title>
+    <!-- #endregion Proj. Info. -->
+</head>
+
+<body class="bg-black">
+
+    <header>
+        <aside class="fixed top-0 min-h-lvh z-[3] left-0 flex">
+            <div class="nav-tabs flex flex-col justify-between bg-black text-white p-4">
+                <div class="overflow-hidden">
+                    <ul class="nav-items space-y-3">
+                        <li class="nav-item font-medium relative cursor-pointer">Search</li>
+                        <li class="nav-item font-medium relative cursor-pointer">Categories</li>
+                        <li class="nav-item font-medium relative cursor-pointer">Area</li>
+                        <li class="nav-item font-medium relative cursor-pointer">Ingredients</li>
+                        <li class="nav-item font-medium relative cursor-pointer">Contact Us</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="flex gap-2 cursor-pointer">
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-solid fa-globe"></i></li>
+                    </ul>
+                    <p>Copyright © 2019 All Rights <br>Reserved.</p>
+                </div>
+            </div>
+            <div class="flex nav-icons text-md flex-col justify-between items-center bg-white p-2">
+                <img class="w-[50px]" src="imgs/logo.png" alt="yummy-logo">
+                <i class="nav-btn cursor-pointer fa-solid fa-bars fa-2x"></i>
+                <div class="flex flex-col gap-3 cursor-pointer">
+                    <i class="fa-solid fa-globe"></i>
+                    <i class="fa-solid fa-share-nodes"></i>
+                </div>
+            </div>
+        </aside>
+    </header>
+
+    <main class="m-auto max-sm:w-full max-sm:px-24 w-3/4 py-10">
+        <div
+            class="loading absolute w-full left-0 bottom-0 top-0 flex bg-black h-lvh z-[1] items-center justify-center">
+            <i class="fa-solid text-white fa-spinner fa-spin fa-5x"></i>
+        </div>
+        <section id="search" class="flex hidden w-full mb-4 relative z-[2]">
+            <div class="w-full *:w-1/2 flex gap-5 *:px-2 *:py-1 *:text-white *:bg-black *:border">
+                <input placeholder="Search By Name"
+                    class="searchByName focus:outline-none focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                    type="text">
+                <input placeholder="Search By First Letter" maxlength="1"
+                    class="searchByFirstLetter focus:outline-none focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                    type="text">
+            </div>
+        </section>
+        <section id="displayArea"
+            class="grid grid-cols-4 gap-6 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 *:w-full">
+        </section>
+        <section id="detailsArea" class="grid grid-cols-3 gap-6 max-md:grid-cols-2 max-sm:grid-cols-1 *:w-full">
+        </section>
+        <form class="flex flex-col hidden w-full h-lvh gap-4 items-center justify-center">
+            <div class="w-2/3 grid grid-cols-2 gap-6 *:w-full max-sm:grid-cols-1">
+                <div>
+                    <input placeholder="Enter Your Name"
+                        class="nameInput focus:outline-none w-full px-2 py-1 focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                        type="text">
+                    <div class="bg-red-100 hidden text-red-800 rounded nameAlert p-3 mt-4">
+                        <p>Special characters and numbers not allowed</p>
+                    </div>
+                </div>
+
+                <div>
+                    <input placeholder="Enter Your Email"
+                        class="emailInput focus:outline-none w-full px-2 py-1 focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                        type="email">
+                    <div class="bg-red-100 hidden text-red-800 rounded emailAlert p-3 mt-4">
+                        <p>Email not valid *exemple@yyy.zzz</p>
+                    </div>
+                </div>
+
+                <div>
+                    <input placeholder="Enter Your Phone"
+                        class="phoneInput focus:outline-none w-full px-2 py-1 focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                        type="tel">
+
+                    <div class="bg-red-100 hidden text-red-800 rounded phoneAlert p-3 mt-4">
+                        <p>Enter valid Phone Number</p>
+                    </div>
+                </div>
+
+                <div>
+                    <input placeholder="Enter Your Age"
+                        class="ageInput focus:outline-none w-full px-2 py-1 focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                        type="number">
+
+                    <div class="bg-red-100 hidden text-red-800 rounded ageAlert p-3 mt-4">
+                        <p>Enter valid age</p>
+                    </div>
+                </div>
+
+                <div>
+                    <input placeholder="Enter Your Password"
+                        class="passwordInput focus:outline-none w-full px-2 py-1 focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                        type="password">
+                    <div class="bg-red-100 hidden text-red-800 rounded passwordAlert p-3 mt-4">
+                        <p>Enter valid password *Minimum eight characters, at least one letter and one number:*</p>
+                    </div>
+                </div>
+                <div>
+                    <input placeholder="Repassword"
+                    class="repasswordInput focus:outline-none w-full px-2 py-1 focus:shadow-[0px_0px_5px_3px_rgba(230,239,21,0.64)] rounded transition-all"
+                    type="password">
+                <div class="bg-red-100 hidden text-red-800 rounded repasswordAlert p-3 mt-4">
+                    <p>Enter valid repassword*</p>
+                </div>
+                </div>
+               
+            </div>
+            <button disabled
+                class="submit border disabled:hover:border-yellow-400 border-yellow-400 bg-transparent disabled:hover:bg-transparent disabled:hover:text-yellow-400 text-yellow-400 px-4 py-2 rounded hover:bg-yellow-400 hover:text-black transition-all">Submit</button>
+
+        </form>
+
+    </main>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js" type="module"></script>
+</body>
+
+</html>
